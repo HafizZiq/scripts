@@ -99,7 +99,8 @@ rm gdrive
 
 echo -e "Setting up udev rules for adb!"
 echo -e "\n================== SETTING UP UDEV RULES FOR ADB ==================\n"
-sudo curl --create-dirs -L -o /etc/udev/rules.d/51-android.rules -O -L https://raw.githubusercontent.com/M0Rf30/android-udev-rules/master/51-android.rules
+wget https://raw.githubusercontent.com/M0Rf30/android-udev-rules/master/51-android.rules
+sudo mv -f 51-android.rules /etc/udev/rules.d/
 sudo chmod 644 /etc/udev/rules.d/51-android.rules
 sudo chown root /etc/udev/rules.d/51-android.rules
 sudo systemctl restart udev
